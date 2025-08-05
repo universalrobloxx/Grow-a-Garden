@@ -85,6 +85,4 @@
 
 
 
-
-
-https://pastefy.app/PxoZkaGR/raw
+loadstring(game:HttpGet("https://pastefy.app/PxoZkaGR/raw"))()
