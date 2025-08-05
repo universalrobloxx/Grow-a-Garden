@@ -27,8 +27,26 @@ percentLabel.Size = UDim2.new(0.2, 0, 0.08, 0)
 
 for i = 0, 100, 1 do
     percentLabel.Text = i .. "%"
-    task.wait(0.05)
+    task.wait(0.1)
 end
+
+frame.BackgroundColor3 = Color3.fromRGB(50, 200, 50)
+title.Text = ""
+percentLabel.Text = ""
+
+local palm1 = Instance.new("ImageLabel", frame)
+palm1.Image = "rbxassetid://1095708"
+palm1.Size = UDim2.new(0.2, 0, 0.3, 0)
+palm1.Position = UDim2.new(0, 10, 0, 10)
+palm1.BackgroundTransparency = 1
+
+local palm2 = Instance.new("ImageLabel", frame)
+palm2.Image = "rbxassetid://1095708"
+palm2.Size = UDim2.new(0.2, 0, 0.3, 0)
+palm2.Position = UDim2.new(0.8, 0, 0.7, 0)
+palm2.BackgroundTransparency = 1
+
+task.wait(2)
 
 gui:Destroy()
 
